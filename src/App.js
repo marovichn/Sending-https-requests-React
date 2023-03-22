@@ -8,13 +8,9 @@ function App() {
 
   //fetching data, not dummy
   async function fetchMoviesHandler() {
-    fetch("https://swapi.dev/api/films/")
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setFetchedMovies(data.results);
-      });
+    const response = await fetch("https://swapi.dev/api/films/");
+    const data = await response.json();
+    setFetchedMovies(data.results);
   }
 
   return (
