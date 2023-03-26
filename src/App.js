@@ -14,7 +14,7 @@ function App() {
     setError(null);
     try {
       const response = await fetch(
-        "https://simple-react-app-27b6-default-rtdb.europe-west1.firebasedatabase.app/movies.json"
+        "https://simple-react-app-2b7b6-default-rtdb.europe-west1.firebasedatabase.app/movies.json"
       );
       if (!response.ok) {
         throw new Error("Something went wrong!");
@@ -44,7 +44,7 @@ function App() {
 
   async function addMovieHandler(movie) {
     const response = await fetch(
-      "https://simple-react-app-27b6-default-rtdb.europe-west1.firebasedatabase.app/movies.json",
+      "https://simple-react-app-2b7b6-default-rtdb.europe-west1.firebasedatabase.app/movies.json",
       {
         method: "POST",
         body: JSON.stringify(movie),
@@ -74,6 +74,7 @@ function App() {
   return (
     <React.Fragment>
       <section>
+        <h1>Add Movie:</h1>
         <AddMovie onAddMovie={addMovieHandler} />
       </section>
       <section>
